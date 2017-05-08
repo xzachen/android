@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">数据展示</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">清空数据</string>
+    <string name="action_settings2">Settings2</string>
+    <string name="action_settings3">Settings3</string>
+    <string name="content">具体的数据如下：</string>
+    <string name="action_Checkincome">收入</string>
+    <string name="action_Checkoutcome">支出</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

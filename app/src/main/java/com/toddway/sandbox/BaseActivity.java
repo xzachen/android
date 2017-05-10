@@ -11,8 +11,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,30 +19,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.balysv.materialmenu.MaterialMenuDrawable;
 import com.balysv.materialmenu.MaterialMenuView;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.security.PublicKey;
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import es.dmoral.toasty.Toasty;
 
-import static android.R.id.list;
 
-public class BaseActivity extends TransitionHelper.BaseActivity {
+public class BaseActivity extends TransitionHelper.BaseActivity  {
     protected static String BASE_FRAGMENT = "base_fragment";
     public
     @InjectView(R.id.toolbar)
@@ -58,12 +41,15 @@ public class BaseActivity extends TransitionHelper.BaseActivity {
     public
     @InjectView(R.id.fab)
     Button fab;
+
     public
     @InjectView(R.id.drawerLayout)
     DrawerLayout drawerLayout;
     public
     @InjectView(R.id.base_fragment_background)
     View fragmentBackround;
+
+
     //    存贮数据的arrayList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,11 +62,11 @@ public class BaseActivity extends TransitionHelper.BaseActivity {
 
 
     private void initToolbar() {
+//        switchdata.setOnCheckedChangeListener(this);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setTitle("");
-
             homeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -95,7 +81,6 @@ public class BaseActivity extends TransitionHelper.BaseActivity {
         if (getIntent().hasExtra("bitmap_id")) {
             fragmentBackround.setBackground(new BitmapDrawable(getResources(), BitmapUtil.fetchBitmapFromIntent(getIntent())));
         }
-
         Fragment fragment = null;
         if (savedInstanceState != null) {
             fragment = getFragmentManager().findFragmentByTag(BASE_FRAGMENT);
@@ -165,11 +150,12 @@ public class BaseActivity extends TransitionHelper.BaseActivity {
     }
 
     private void ClearData() {
+
         SQLiteDatabase database = null;
         try {
             database = MyApplication.getDbtestHelper().getWritableDatabase();
             database.beginTransaction();
-            long delete = database.delete("tbdata", null, null);
+            long delete = database.delete("tbdatatest", null, null);
             if (delete == -1) {
                 Toasty.error(BaseActivity.this, "数据清空失败", Toast.LENGTH_SHORT).show();
             } else {
@@ -196,5 +182,6 @@ public class BaseActivity extends TransitionHelper.BaseActivity {
 
         return (BaseActivity) activity;
     }
+
 
 }

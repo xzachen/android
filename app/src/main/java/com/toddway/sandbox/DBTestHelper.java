@@ -11,12 +11,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBTestHelper extends SQLiteOpenHelper {
     private Context context;
-    private static  final String CREAT_DEMO="create table tbdata(id integer primary key autoincrement,data text)";
+
+    private static final String CREAT_DEMO = "create table tbdatatest(id integer primary key autoincrement,data text,time text,money text,class text,income text)";
 
     public DBTestHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler) {
         super(context, name, factory, version, errorHandler);
-        this.context=context;
+        this.context = context;
     }
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREAT_DEMO);

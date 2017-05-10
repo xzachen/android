@@ -11,7 +11,7 @@ import com.android.volley.toolbox.Volley;
  */
 
 public class MyApplication extends Application {
-    public  static  DBTestHelper dbtestHelper;
+    public static DBTestHelper dbtestHelper;
     public static Context context;
 
     public static Context getContext() {
@@ -21,9 +21,10 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        this.dbtestHelper = new DBTestHelper(getApplicationContext(), "tbdata", null, 1, null);
-        this.context=getApplicationContext();
+        this.dbtestHelper = new DBTestHelper(getApplicationContext(), "tbdatatest", null, 1, null);
+        this.context = getApplicationContext();
     }
+
     public static DBTestHelper getDbtestHelper() {
         return dbtestHelper;
     }

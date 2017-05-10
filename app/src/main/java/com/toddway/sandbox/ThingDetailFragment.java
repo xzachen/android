@@ -33,7 +33,7 @@ public class ThingDetailFragment extends TransitionHelper.BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_thing_detail, container, false);
         ButterKnife.inject(this, rootView);
-        detailBodyTextView.setText(detailBodyTextView.getText()+getActivity().getIntent().getStringExtra("item_text2"));
+        detailBodyTextView.setText(detailBodyTextView.getText()+"\n"+getActivity().getIntent().getStringExtra("item_text2"));
         scrollView.setOverScrollListener(new OverScrollView.OverScrollListener() {
             int translationThreshold = 100;
             @Override

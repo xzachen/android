@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">数据展示</string>
+    <string name="app_name">记账本</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">清空数据</string>
     <string name="action_settings2">Settings2</string>
     <string name="action_settings3">Settings3</string>
-    <string name="content">具体的数据如下：</string>
-    <string name="action_Checkincome">收入</string>
-    <string name="action_Checkoutcome">支出</string>
+    <string name="content">具体的账单数据如下：</string>
+    <string name="action_Checkincome">查看收入详情</string>
+    <string name="action_Checkoutcome">查看支出详情</string>
     <string name="title_activity_main2">Main2Activity</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>

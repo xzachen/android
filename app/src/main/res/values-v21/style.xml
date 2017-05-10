@@ -8,5 +8,8 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
-
+    <style name="MyButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/primaryColor</item>
+        <item name="colorButtonNormal">@color/almostWhite</item>
+    </style>
 </resources>

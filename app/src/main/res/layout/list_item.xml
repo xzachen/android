@@ -28,7 +28,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="数据结果"
+            android:text="账单详情"
             android:fontFamily="sans-serif-light"
 
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
